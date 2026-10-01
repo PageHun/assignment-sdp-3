@@ -1,0 +1,67 @@
+diff --git a/src/Main.java b/src/Main.java
+new file mode 100644
+index 0000000..c19e7c1
+--- /dev/null
++++ b/src/Main.java
+@@ -0,0 +1,17 @@
++import com.renderer.*;
++import com.shape.*;
++
++public class Main{
++    public static void main(String[] args){
++        Renderer vector = new VectorRenderer();
++        Renderer raster = new RasterRenderer();
++        Renderer ascii = new AsciiRenderer();
++        Shape shape1 = new Circle(1, 5, vector);
++        Shape shape2 = new Square(2, 5, raster);
++        Shape shape3 = new Square(3, 4, ascii);
++        shape2 = new Circle(2, 10, raster);
++        System.out.println(shape1.execute());
++        System.out.println(shape2.execute());
++        System.out.println(shape3.execute());
++    }
++}
+\ No newline at end of file
+diff --git a/src/com/main/Main.java b/src/com/main/Main.java
+deleted file mode 100644
+index db85233..0000000
+--- a/src/com/main/Main.java
++++ /dev/null
+@@ -1,15 +0,0 @@
+-package com.main;
+-
+-import com.renderer.*;
+-import com.shape.*;
+-
+-public class Main{
+-    public static void main(String[] args){
+-        Renderer vector = new VectorRenderer();
+-        Renderer raster = new RasterRenderer();
+-        Shape circle = new Circle(1, 5, vector);
+-        Shape square = new Square(2, 5, raster);
+-        System.out.println(circle.execute());
+-        System.out.println(square.execute());
+-    }
+-}
+\ No newline at end of file
+diff --git a/src/com/renderer/AsciiRenderer.java b/src/com/renderer/AsciiRenderer.java
+new file mode 100644
+index 0000000..21b2812
+--- /dev/null
++++ b/src/com/renderer/AsciiRenderer.java
+@@ -0,0 +1,14 @@
++package com.renderer;
++
++public class AsciiRenderer implements Renderer {
++
++    @Override
++    public String renderCircle(int id, double radius) {
++        return String.format("Drawing %s(id) circle as ascii with radius %s", id, radius);
++    }
++
++    @Override
++    public String renderSquare(int id, double side) {
++        return String.format("Drawing %s(id) square as ascii with side %s", id, side);
++    }
++}
+\ No newline at end of file
