@@ -3,15 +3,18 @@ package com.shape;
 import com.renderer.Renderer;
 
 public class Circle extends Shape {
-    private double x, y, radius;
-    public Circle(double x, double y, double radius, Renderer renderer){
-        super(renderer);
-        this.x = x;
-        this.y = y;
+    private final double radius;
+    public Circle(int id, double radius, Renderer renderer){
+        super(id, renderer);
         this.radius = radius;
     }
+
+    public double getRadius(){
+        return  radius;
+    }
+
     @Override
-    public void draw() {
-        renderer.renderCircle(x, y, radius);
+    public String execute() {
+        return renderer.renderCircle(getId(), radius);
     }
 }

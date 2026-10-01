@@ -3,12 +3,12 @@ package com.renderer;
 public class VectorRenderer implements Renderer {
 
     @Override
-    public void renderCircle(double x, double y, double radius) {
-        System.out.printf("Drawing circle as vector at %s, %s with radius %s\n", x, y, radius);
+    public String renderCircle(int id, double radius) {
+        return String.format("Drawing %s(id) circle as vector with radius %s", id, radius);
     }
 
     @Override
-    public void renderSquare(double x1, double y1, double x2, double y2) {
-        System.out.printf("Drawing square as vector at 2 points: {%s; %s;}, {%s; %s;}\n", x1, y1, x2, y2);
+    public String renderSquare(int id, double side) {
+        return String.format("Drawing %s(id) square as vector with side %s", id, side);
     }
 }

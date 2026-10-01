@@ -3,16 +3,20 @@ package com.shape;
 import com.renderer.*;
 
 public abstract class Shape{
+    private final int id;
     protected Renderer renderer;
-    protected Shape(Renderer renderer){
+    public Shape(int id, Renderer renderer){
+        this.id = id;
         this.renderer = renderer;
     }
-    public abstract void draw();
-}
 
-//class Square extends Shape{
-//    @Override
-//    public void draw() {
-//        System.out.println("Drawing square");
-//    }
-//}
+    public int getId(){
+        return id;
+    }
+
+    public void setImplementation(Renderer renderer){
+        this.renderer = renderer;
+    }
+
+    public abstract String execute();
+}

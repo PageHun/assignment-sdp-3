@@ -7,9 +7,9 @@ public class Main{
     public static void main(String[] args){
         Renderer vector = new VectorRenderer();
         Renderer raster = new RasterRenderer();
-        Shape circle = new Circle(5, 5, 10, vector);
-        Shape square = new Square(5, 8, 10, 4, raster);
-        circle.draw();
-        square.draw();
+        Shape circle = new Circle(1, 5, vector);
+        Shape square = new Square(2, 5, raster);
+        System.out.println(circle.execute());
+        System.out.println(square.execute());
     }
 }
