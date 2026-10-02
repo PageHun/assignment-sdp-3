@@ -1,3 +1,10 @@
-Drawing 1(id) circle as vector with radius 5.0
-Drawing 2(id) circle as raster with radius 10.0
-Drawing 3(id) square as ascii with side 4.0
+======================= Required demonstration checks =======================
+T1 | PASS:) | Circle + VectorRenderer | result=VECTOR circle id=1 radius=2.0
+T2 | PASS:) | Circle + RasterRenderer | result=RASTER circle id=2 radius=2.0
+T3 | PASS:) | Square + VectorRenderer | result=VECTOR square id=3 side=3.0
+T4 | PASS:) | Square + RasterRenderer | result=RASTER square id=4 side=3.0
+T5 | PASS:) | sameObject=true         | stateUnchanged=true | before=<VECTOR circle id=5 radius=2.0> | after=<RASTER circle id=5 radius=2.0>
+T6 | PASS:) | Circle + AsciiRenderer  | result=ASCII circle id=6 radius=2.0
+T7 | PASS:) | Square + AsciiRenderer  | result=ASCII square id=7 side=3.0
+=============================================================================
+SUMMARY: 7/7 PASS

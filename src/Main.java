@@ -7,6 +7,7 @@ public class Main{
         Renderer vector = new VectorRenderer();
         Renderer raster = new RasterRenderer();
         Renderer ascii = new AsciiRenderer();
+        System.out.println("======================= Required demonstration checks =======================");
         // T1
         Shape circle1 = new Circle(1, 2, vector);
         String result1 = circle1.execute();
@@ -48,10 +49,11 @@ public class Main{
         int afterId = circle5.getId();
         double afterRadius = circle5.getRadius();
         String afterResult5 = circle5.execute();
-        String expected5 = "RASTER circle id=5 radius=2.0";
+        String beforeExpected5 = "VECTOR circle id=5 radius=2.0";
+        String afterExpected5 = "RASTER circle id=5 radius=2.0";
         boolean sameObject = (beforeObject == afterObject);
         boolean stateUnchanged = (beforeRadius == afterRadius && beforeId == afterId);
-        boolean passT5 = sameObject && stateUnchanged && (afterResult5.equals(expected5));
+        boolean passT5 = sameObject && stateUnchanged && (afterResult5.equals(afterExpected5) && beforeResult5.equals(beforeExpected5));
         if (passT5) count++;
         System.out.printf("T5 | %s | sameObject=%b         | stateUnchanged=%b | before=<%s> | after=<%s>%n", passT5 ? "PASS:)" : "FAIL:(", sameObject, stateUnchanged, beforeResult5, afterResult5);
         // T6
@@ -68,6 +70,7 @@ public class Main{
         boolean passT7 = result7.equals(expected7);
         if (passT7) count++;
         check("T7", passT7, "Square + AsciiRenderer ", result7, expected7);
+        System.out.println("=============================================================================");
         System.out.printf("SUMMARY: %s/7 PASS%n", count);
     }
 
